@@ -1,8 +1,8 @@
 {
   "name": "random-uri-resolver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Resolves URI to one of the supplied hosts",
-  "main": "lib/index.js",
+  "main": "lib/resolver.js",
   "scripts": {
     "test": "npm test"
   },
