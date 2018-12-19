@@ -24,7 +24,7 @@ module.exports = () => {
 
     const str = input as string;
 
-    // URI format: redis://x:942t4dff@192.168.0.17:6379,192.168.0.18:1234
+    // URI format: redis://x:942t4dff@192.168.0.17:6379,192.168.0.18:1234/sample
     let urlParts: IParsedURI;
     try {
       urlParts = mongodbUri.parse(str);
