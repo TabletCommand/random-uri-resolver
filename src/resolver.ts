@@ -17,7 +17,7 @@ module.exports = () => {
   const mongodbUri = require("mongodb-uri");
   const _ = require("lodash");
 
-  function resolve(input: unknown, defaultHost: IParsedURIHost): string {
+  function resolve(input: unknown, someHost?: IParsedURIHost): string {
     if (!_.isString(input)) {
       return "";
     }
@@ -34,6 +34,14 @@ module.exports = () => {
 
     if (!_.isObject(urlParts)) {
       return str;
+    }
+
+    let defaultHost: IParsedURIHost = {
+      host: "localhost",
+    };
+
+    if (_.isObject(someHost)) {
+      defaultHost = someHost as IParsedURIHost;
     }
 
     let hostPort = buildPair("localhost", defaultHost.host, defaultHost.port);

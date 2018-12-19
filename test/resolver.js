@@ -66,5 +66,11 @@ describe("resolver", () => {
       const resolved = resolver.resolve(oneHost, defaultHost);
       assert.equal(resolved, oneHost);
     });
+
+    it("returns something even if default host is not supplied", () => {
+      const oneHost = "redis://a:b@192.168.0.18:1234";
+      const resolved = resolver.resolve(oneHost);
+      assert.equal(resolved, oneHost);
+    });
   });
 });
