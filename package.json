@@ -1,6 +1,6 @@
 {
   "name": "random-uri-resolver",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Resolves URI to one of the supplied hosts",
   "main": "lib/resolver.js",
   "scripts": {
@@ -14,20 +14,20 @@
     "url": "git://github.com/TabletCommand/random-uri-resolver.git"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "mongodb-uri": "^0.9.7"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.119",
-    "@types/node": "^10.12.17",
+    "@types/lodash": "^4.14.157",
+    "@types/node": "^14.0.14",
     "chai": "^4.2.0",
-    "gulp": "^4.0.0",
-    "gulp-mocha": "^6.0.0",
-    "gulp-tslint": "^8.1.3",
-    "gulp-typescript": "^5.0.0",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.12.0",
-    "tslint-sonarts": "^1.8.0",
-    "typescript": "^3.2.2"
+    "gulp": "^4.0.2",
+    "gulp-mocha": "^7.0.2",
+    "gulp-tslint": "^8.1.4",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "tslint-sonarts": "^1.9.0",
+    "typescript": "^3.9.6"
   }
 }
