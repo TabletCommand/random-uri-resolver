@@ -1,10 +1,10 @@
 // Based on https://github.com/mongolab/mongodb-uri-node/blob/master/mongodb-uri.js
-declare interface IParsedURIHost {
+export declare interface IParsedURIHost {
   host: string;
   port?: number;
 }
 
-declare interface IParsedURI {
+export declare interface IParsedURI {
   scheme: string;
   username?: string;
   password?: string;
@@ -13,7 +13,7 @@ declare interface IParsedURI {
   options?: any;
 }
 
-module.exports = () => {
+export default function ResolverModule() {
   const mongodbUri = require("mongodb-uri");
   const _ = require("lodash");
 
@@ -85,4 +85,6 @@ module.exports = () => {
     buildPair,
     resolve,
   };
-};
+}
+
+module.exports = ResolverModule;

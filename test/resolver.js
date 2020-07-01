@@ -3,7 +3,6 @@
 const assert = require("chai").assert;
 const resolver = require("../lib/resolver")();
 
-
 describe("resolver", () => {
   context("buildPair", () => {
     it("returns default if not set", () => {

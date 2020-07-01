@@ -1,12 +1,23 @@
 const gulp = require("gulp");
 const gulpTslint = require("gulp-tslint");
 const tslint = require("tslint");
+const del = require("del");
 const mocha = require("gulp-mocha");
-const ts = require("gulp-typescript");
-const tsProject = ts.createProject("tsconfig.json");
+const shell = require("gulp-shell");
+
+gulp.task("clean", function cleanTask() {
+  return del([
+    "lib/**",
+    "definitions/**"
+  ], {
+    force: true
+  });
+});
+
+gulp.task("build", gulp.series("clean", shell.task("tsc -p .\\/src")));
 
 gulp.task("tslint", function tslintTask() {
-  const program = tslint.Linter.createProgram("./tsconfig.json");
+  const program = tslint.Linter.createProgram("./src/tsconfig.json");
   const sources = [
     "*.ts",
     "src/**/*.ts"
@@ -20,12 +31,6 @@ gulp.task("tslint", function tslintTask() {
 });
 
 gulp.task("lint", gulp.series("tslint"));
-
-gulp.task("build", gulp.series("lint", function buildTask() {
-  return tsProject.src()
-    .pipe(tsProject())
-    .js.pipe(gulp.dest("lib"));
-}));
 
 gulp.task("test", gulp.series("build", function buildTask() {
   var tests = [
