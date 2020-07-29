@@ -1,6 +1,6 @@
 {
   "name": "random-uri-resolver",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Resolves URI to one of the supplied hosts",
   "main": "lib/resolver.js",
   "scripts": {
@@ -15,12 +15,12 @@
   },
   "types": "definitions/resolver.d.ts",
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mongodb-uri": "^0.9.7"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.157",
-    "@types/node": "^14.0.14",
+    "@types/lodash": "^4.14.158",
+    "@types/node": "^14.0.27",
     "chai": "^4.2.0",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -29,6 +29,6 @@
     "gulp-tslint": "^8.1.4",
     "tslint": "^6.1.2",
     "tslint-sonarts": "^1.9.0",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   }
 }
