@@ -1,11 +1,11 @@
 {
   "name": "random-uri-resolver",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Resolves URI to one of the supplied hosts",
   "main": "lib/resolver.js",
   "scripts": {
-    "test": "./node_modules/gulp/bin/gulp.js test",
-    "build": "./node_modules/gulp/bin/gulp.js build"
+    "test": "gulp test",
+    "build": "gulp build"
   },
   "author": "Marius Ursache <marius@tabletcommand.com>",
   "license": "MIT",
@@ -15,20 +15,20 @@
   },
   "types": "definitions/resolver.d.ts",
   "dependencies": {
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "mongodb-uri": "^0.9.7"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.158",
-    "@types/node": "^14.0.27",
+    "@types/lodash": "^4.14.162",
+    "@types/node": "^14.11.8",
     "chai": "^4.2.0",
-    "del": "^5.1.0",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-mocha": "^7.0.2",
     "gulp-shell": "^0.8.0",
     "gulp-tslint": "^8.1.4",
     "tslint": "^6.1.2",
     "tslint-sonarts": "^1.9.0",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.3"
   }
 }
