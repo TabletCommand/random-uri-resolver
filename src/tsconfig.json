@@ -1,16 +1,31 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "declaration": true,
     "declarationDir": "../definitions",
     "declarationMap": true,
     "esModuleInterop": true,
     "module": "commonjs",
     "moduleResolution": "node",
+    "newLine": "lf",
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
     "outDir": "../lib",
+    "paths": {
+      "*": [
+        "../node_modules/@types/*",
+        "*"
+      ],
+    },
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
     "target": "es2018",
+    "types": [
+      "node",
+      "mocha"
+    ]
   },
   "exclude": [
     "../test"

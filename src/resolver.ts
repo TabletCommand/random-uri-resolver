@@ -10,25 +10,26 @@ export declare interface IParsedURI {
   password?: string;
   hosts: [IParsedURIHost];
   database?: string;
-  options?: any;
+  options?: unknown;
 }
 
+import mongodbUri from "mongodb-uri";
+import _ from "lodash";
+
 export default function ResolverModule() {
-  const mongodbUri = require("mongodb-uri");
-  const _ = require("lodash");
 
   function resolve(input: unknown, someHost?: IParsedURIHost): string {
     if (!_.isString(input)) {
       return "";
     }
 
-    const str = input as string;
+    const str = input;
 
     // URI format: redis://x:942t4dff@192.168.0.17:6379,192.168.0.18:1234/sample
     let urlParts: IParsedURI;
     try {
       urlParts = mongodbUri.parse(str);
-    } catch (e) {
+    } catch {
       return str;
     }
 
@@ -41,7 +42,7 @@ export default function ResolverModule() {
     };
 
     if (_.isObject(someHost)) {
-      defaultHost = someHost as IParsedURIHost;
+      defaultHost = someHost;
     }
 
     let hostPort = buildPair("localhost", defaultHost.host, defaultHost.port);

@@ -17,11 +17,16 @@ if hash brew 2>/dev/null; then
     fi
 fi
 
-NODEvX="v12.18.2"
+NODE_VERSION="v22.13.0"
 
-nvm install $NODEvX
-nvm use $NODEvX
+nvm use $NODE_VERSION || nvm install $NODE_VERSION
 
-rm -rf node_modules
 npm install
+echo "--- spelling"
+npx cspell
+echo "--- type coverage"
+npx type-coverage
+echo "--- lint"
+npm run lint
+echo "--- test"
 npm test
