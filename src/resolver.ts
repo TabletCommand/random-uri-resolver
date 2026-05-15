@@ -8,7 +8,7 @@ export declare interface IParsedURI {
   scheme: string;
   username?: string;
   password?: string;
-  hosts: [IParsedURIHost];
+  hosts: IParsedURIHost[];
   database?: string;
   options?: unknown;
 }
