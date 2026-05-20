@@ -1,6 +1,6 @@
 {
   "name": "random-uri-resolver",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Resolves URI to one of the supplied hosts",
   "main": "lib/resolver.js",
   "scripts": {
@@ -20,17 +20,13 @@
     "mongodb-uri": "^0.9.7"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.5",
-    "@eslint/js": "^9.39.4",
     "@types/chai": "^5.2.3",
     "@types/debug": "^4.1.13",
-    "@types/express": "^4.17.25",
     "@types/lodash": "^4.17.24",
-    "@types/mocha": "^10.0.10",
     "@types/mongodb-uri": "^0.9.4",
-    "@types/node": "^24.12.3",
-    "@typescript-eslint/eslint-plugin": "^8.59.2",
-    "@typescript-eslint/parser": "^8.59.2",
+    "@types/node": "^24.12.4",
+    "@typescript-eslint/eslint-plugin": "^8.59.3",
+    "@typescript-eslint/parser": "^8.59.3",
     "chai": "^6.2.2",
     "cspell": "^10.0.0",
     "del": "^8.0.1",
@@ -41,8 +37,8 @@
     "globals": "^17.6.0",
     "gulp": "^5.0.1",
     "gulp-execa": "^8.0.1",
-    "mocha": "^11.7.5",
-    "ts-node": "^10.9.2",
+    "neostandard": "^0.13.0",
+    "tsx": "^4.21.0",
     "type-coverage": "^2.29.7",
     "typescript": "~5.9.3"
   }

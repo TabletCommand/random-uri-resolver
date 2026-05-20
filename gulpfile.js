@@ -17,8 +17,10 @@ gulp.task("build", gulp.series("clean", exec.task("tsc -p src")));
 
 gulp.task("lint", gulp.series(exec.task("eslint src")));
 
-gulp.task("test", exec.task("mocha --reporter list --recursive test"));
+gulp.task("test", exec.task("tsx --test --test-reporter=spec src/test/*.ts"));
 
-gulp.task("default", gulp.series("build", function defaultTask(done) {
-  return done();
-}));
+gulp.task("spell", exec.task("cspell --no-progress"));
+
+gulp.task("type-coverage", exec.task("type-coverage --detail"));
+
+gulp.task("default", gulp.series("spell", "type-coverage", "lint", "build", "test"));

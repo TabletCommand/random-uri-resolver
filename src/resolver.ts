@@ -17,7 +17,6 @@ import mongodbUri from "mongodb-uri";
 import _ from "lodash";
 
 export default function ResolverModule() {
-
   function resolve(input: unknown, someHost?: IParsedURIHost): string {
     if (!_.isString(input)) {
       return "";

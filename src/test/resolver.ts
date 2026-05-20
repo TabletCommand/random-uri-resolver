@@ -1,17 +1,18 @@
-"use strict";
+import { assert } from "chai";
+import { describe, it } from "node:test";
+import resolveModule from "../resolver";
 
-const assert = require("chai").assert;
-const resolver = require("../lib/resolver")();
+const resolver = resolveModule();
 
 describe("resolver", () => {
-  context("buildPair", () => {
+  describe("buildPair", () => {
     it("returns default if not set", () => {
-      const pair = resolver.buildPair("abcd", null, 12);
+      const pair = resolver.buildPair("abcd", undefined, 12);
       assert.equal(pair, "abcd");
     });
 
     it("returns host, if it's defined", () => {
-      const pair = resolver.buildPair("abcd", "cde", null);
+      const pair = resolver.buildPair("abcd", "cde", undefined);
       assert.equal(pair, "cde");
     });
 
@@ -21,7 +22,7 @@ describe("resolver", () => {
     });
   });
 
-  context("resolve", () => {
+  describe("resolve", () => {
     const defaultHost = {
       host: "local",
       port: 1234
